@@ -1,0 +1,172 @@
+/* ==========================================================================
+   SkillLink — offres.css
+   Recherche d'offres (étudiant) + publication d'offres (entreprise).
+   Réutilisé aussi par les formations avec les mêmes patterns.
+   ========================================================================== */
+
+/* --- Barre de filtres --- */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.filter-bar__search {
+  flex: 2;
+  min-width: 220px;
+}
+
+.filter-bar select {
+  flex: 1;
+  min-width: 160px;
+}
+
+.filter-bar input,
+.filter-bar select {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-sm);
+  background: var(--color-canvas);
+  font-size: var(--fs-small);
+}
+
+.filter-bar__count {
+  width: 100%;
+  font-size: var(--fs-caption);
+  color: var(--color-ink-soft);
+  margin-top: -var(--space-1);
+}
+
+/* --- Grille d'offres --- */
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-4);
+}
+
+.offer-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.offer-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+.offer-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.offer-card__logo {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--color-canvas);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--fs-caption);
+  color: var(--color-ink-soft);
+  flex-shrink: 0;
+}
+
+.offer-card__type {
+  font-family: var(--font-mono);
+  font-size: var(--fs-caption);
+  text-transform: uppercase;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-clay) 12%, white);
+  color: var(--color-clay);
+  white-space: nowrap;
+}
+
+.offer-card__title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.offer-card__company {
+  font-size: var(--fs-small);
+  color: var(--color-ink-soft);
+}
+
+.offer-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  font-size: var(--fs-caption);
+  color: var(--color-ink-soft);
+  margin: var(--space-1) 0;
+}
+
+.offer-card__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: var(--space-1);
+}
+
+.offer-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: var(--space-2);
+}
+
+.offer-card__posted {
+  font-size: var(--fs-caption);
+  color: var(--color-ink-soft);
+}
+
+/* --- Formulaire de publication (offre / formation) --- */
+.publish-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.publish-preview {
+  position: sticky;
+  top: calc(var(--space-4));
+}
+
+.publish-preview__label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-caption);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-ink-soft);
+  margin-bottom: var(--space-2);
+}
+
+@media (max-width: 1000px) {
+  .publish-layout { grid-template-columns: 1fr; }
+  .publish-preview { position: static; }
+}
+
+@media (max-width: 700px) {
+  .filter-bar { flex-direction: column; }
+  .filter-bar select, .filter-bar__search { width: 100%; }
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publier une formation — SkillLink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/offres.css">
+</head>
+<body>
+
+<div class="dash">
+
+  <aside class="dash__sidebar">
+    <div>
+      <a href="../index.html" class="brand" style="color:#fff; margin-bottom: var(--space-5); display:flex;">
+        <span class="brand__mark">SL</span>
+        SkillLink
+      </a>
+      <div class="dash__user">
+        <div class="dash__avatar">FT</div>
+        <div>
+          <div class="dash__user-name">Formatech</div>
+          <div class="dash__user-role">Formateur</div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="dash__nav" style="display:flex;">
+      <a href="dashboard.html?role=formateur"><span class="dash__nav-icon">■</span> Tableau de bord</a>
+      <a href="profil-formateur.html"><span class="dash__nav-icon">◔</span> Mon profil</a>
+      <a href="publier-formation.html" class="is-active"><span class="dash__nav-icon">+</span> Publier une formation</a>
+      <a href="inscriptions-formations.html"><span class="dash__nav-icon">▤</span> Inscriptions</a>
+      <a href="messagerie.html"><span class="dash__nav-icon">✉</span> Messages</a>
+    </nav>
+  </aside>
+
+  <main class="dash__main">
+    <div class="dash__header">
+      <div>
+        <h1 class="dash__title">Publier une formation</h1>
+        <p class="dash__subtitle">Elle sera visible immédiatement par tous les étudiants inscrits.</p>
+      </div>
+    </div>
+
+    <div class="publish-layout">
+
+      <form data-publish-form data-validate novalidate>
+        <div class="form-panel">
+          <h2 class="form-panel__title">Détails de la formation</h2>
+
+          <div class="field">
+            <label for="offer-title">Titre de la formation</label>
+            <input type="text" id="offer-title" required placeholder="Ex : Initiation à Ruby on Rails">
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="offer-type">Format</label>
+              <select id="offer-type" required>
+                <option value="">Sélectionner…</option>
+                <option>En ligne</option>
+                <option>Présentiel</option>
+                <option>Hybride</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="offer-domain">Domaine</label>
+              <select id="offer-domain">
+                <option value="">Sélectionner…</option>
+                <option>Informatique / Développement</option>
+                <option>Design</option>
+                <option>Gestion de projet</option>
+                <option>Marketing</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="offer-location">Durée</label>
+              <input type="text" id="offer-location" placeholder="Ex : 6 semaines">
+            </div>
+            <div class="field">
+              <label for="training-start">Date de début</label>
+              <input type="date" id="training-start">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="training-capacity">Nombre de places</label>
+            <input type="number" id="training-capacity" min="1" placeholder="Ex : 25">
+          </div>
+
+          <div class="field">
+            <label for="offer-description">Description</label>
+            <textarea id="offer-description" rows="6" required placeholder="Objectifs pédagogiques, programme, prérequis…"></textarea>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-ghost">Enregistrer comme brouillon</button>
+          <button type="submit" class="btn btn-accent">Publier la formation</button>
+        </div>
+      </form>
+
+      <div class="publish-preview">
+        <p class="publish-preview__label">Aperçu — vu par les étudiants</p>
+        <article class="card offer-card">
+          <div class="offer-card__top">
+            <div class="offer-card__logo">FT</div>
+            <span class="offer-card__type" data-preview-type>Format</span>
+          </div>
+          <h3 class="offer-card__title" data-preview-title>Titre de la formation</h3>
+          <p class="offer-card__company">Formatech</p>
+          <div class="offer-card__meta">
+            <span data-preview-meta>Domaine · Durée</span>
+          </div>
+          <p style="font-size: var(--fs-small); color: var(--color-ink-soft);" data-preview-description>
+            La description de la formation apparaîtra ici au fur et à mesure de la saisie.
+          </p>
+          <div class="offer-card__footer">
+            <span class="offer-card__posted">Publiée à l'instant</span>
+            <span class="btn btn-accent" style="pointer-events:none;">S'inscrire</span>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/offres.js"></script>
+</body>
+</html>

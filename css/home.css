@@ -1,0 +1,170 @@
+/* ==========================================================================
+   SkillLink — home.css
+   Styles propres à la page d'accueil.
+   ========================================================================== */
+
+/* --- Hero --- */
+.hero {
+  padding-block: var(--space-8) var(--space-7);
+  border-bottom: 1px solid var(--color-border);
+  background:
+    radial-gradient(80% 60% at 85% 0%, color-mix(in srgb, var(--color-amber) 12%, transparent), transparent 70%),
+    var(--color-canvas);
+}
+
+.hero__inner { max-width: 760px; }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-caption);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-amber-dark);
+  margin-bottom: var(--space-3);
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: var(--space-4);
+}
+
+.hero__accent {
+  font-style: italic;
+  color: var(--color-amber-dark);
+}
+
+.hero__lead {
+  font-size: 1.15rem;
+  color: var(--color-ink-soft);
+  max-width: 58ch;
+  margin-bottom: var(--space-5);
+}
+
+.hero__cta {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.hero__stats {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.hero__stats dt {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.hero__stats dd {
+  font-size: var(--fs-small);
+  color: var(--color-ink-soft);
+}
+
+/* --- Sections génériques --- */
+.section {
+  padding-block: var(--space-7);
+}
+
+.section--muted {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.section__lead {
+  color: var(--color-ink-soft);
+  max-width: 60ch;
+  margin-bottom: var(--space-5);
+}
+
+/* --- Role picker : extensions spécifiques à la home --- */
+.role-picker__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-block: var(--space-2) var(--space-1);
+}
+
+.role-picker__desc {
+  font-size: var(--fs-small);
+  color: var(--color-ink-soft);
+  margin-bottom: var(--space-3);
+}
+
+.role-picker__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: var(--fs-small);
+  color: var(--color-ink-soft);
+}
+
+.role-picker__list li {
+  padding-left: 1rem;
+  position: relative;
+}
+
+.role-picker__list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--color-amber-dark);
+}
+
+.role-picker__submit {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-top: var(--space-2);
+}
+
+/* --- Steps (comment ça marche) --- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+.steps__item h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  margin-block: var(--space-2) var(--space-1);
+}
+
+.steps__item p {
+  font-size: var(--fs-small);
+  color: var(--color-ink-soft);
+}
+
+.steps__index {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--color-amber-dark);
+  display: inline-block;
+  padding-bottom: var(--space-1);
+  border-bottom: 2px solid var(--color-amber);
+}
+
+/* --- Responsive --- */
+@media (max-width: 860px) {
+  .hero__stats { gap: var(--space-4); flex-wrap: wrap; }
+  .steps { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .hero__cta { flex-direction: column; align-items: stretch; }
+}

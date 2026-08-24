@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connexion — SkillLink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="../index.html" class="brand">
+      <span class="brand__mark">SL</span>
+      SkillLink
+    </a>
+    <div class="header-actions">
+      <span style="font-size: var(--fs-small); color: var(--color-ink-soft);">Pas encore de compte ?</span>
+      <a href="inscription.html" class="btn btn-primary">Créer un compte</a>
+    </div>
+  </div>
+</header>
+
+<main class="auth">
+
+  <div class="auth__panel">
+    <div class="auth__form-wrap">
+      <p class="auth__eyebrow">Connexion</p>
+      <h1 class="auth__title">Content de te revoir</h1>
+      <p class="auth__subtitle">Connecte-toi pour accéder à ton tableau de bord.</p>
+
+      <form data-validate novalidate action="dashboard.html" method="get">
+        <div class="field">
+          <label for="login-email">Adresse email</label>
+          <input type="email" id="login-email" name="email" required autocomplete="email" placeholder="toi@exemple.com">
+        </div>
+
+        <div class="field">
+          <label for="login-password">Mot de passe</label>
+          <input type="password" id="login-password" name="password" required autocomplete="current-password">
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: var(--space-4);">
+          <label class="checkbox-field" style="margin-bottom:0;">
+            <input type="checkbox">
+            <span>Se souvenir de moi</span>
+          </label>
+          <a href="#" style="font-size: var(--fs-small); font-weight:600; text-decoration: underline; text-underline-offset:3px;">
+            Mot de passe oublié ?
+          </a>
+        </div>
+
+        <button type="submit" class="btn btn-accent auth__submit">Se connecter</button>
+      </form>
+
+      <p class="auth__switch">
+        Pas encore de compte ? <a href="inscription.html">S'inscrire</a>
+      </p>
+    </div>
+  </div>
+
+  <aside class="auth__side">
+    <div>
+      <p class="auth__side-quote">
+        « Ce n'est pas la relation qui manque, c'est le point de contact. »
+      </p>
+      <p class="auth__side-meta" style="margin-top: var(--space-3);">
+        Retrouve tes offres, tes candidatures et tes échanges en un endroit.
+      </p>
+    </div>
+    <dl class="auth__side-stats">
+      <div><dt>3</dt><dd>types de comptes</dd></div>
+      <div><dt>1</dt><dd>tableau de bord</dd></div>
+    </dl>
+  </aside>
+
+</main>
+
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+</body>
+</html>

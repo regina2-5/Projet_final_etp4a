@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offres — SkillLink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/offres.css">
+</head>
+<body>
+
+<div class="dash">
+
+  <aside class="dash__sidebar">
+    <div>
+      <a href="../index.html" class="brand" style="color:#fff; margin-bottom: var(--space-5); display:flex;">
+        <span class="brand__mark">SL</span>
+        SkillLink
+      </a>
+      <div class="dash__user">
+        <div class="dash__avatar">AK</div>
+        <div>
+          <div class="dash__user-name">Aïcha Konaté</div>
+          <div class="dash__user-role">Étudiant</div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="dash__nav" style="display:flex;">
+      <a href="dashboard.html?role=etudiant"><span class="dash__nav-icon">■</span> Tableau de bord</a>
+      <a href="profil-etudiant.html"><span class="dash__nav-icon">◔</span> Mon profil</a>
+      <a href="recherche-offres.html" class="is-active"><span class="dash__nav-icon">⌕</span> Offres</a>
+      <a href="recherche-formations.html"><span class="dash__nav-icon">▤</span> Formations</a>
+      <a href="messagerie.html"><span class="dash__nav-icon">✉</span> Messages</a>
+    </nav>
+  </aside>
+
+  <main class="dash__main">
+    <div class="dash__header">
+      <div>
+        <h1 class="dash__title">Offres disponibles</h1>
+        <p class="dash__subtitle">Stages et emplois publiés par les entreprises partenaires.</p>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <input type="search" class="filter-bar__search" data-offer-search placeholder="Rechercher un poste, une entreprise…">
+      <select data-offer-domain>
+        <option value="">Tous les domaines</option>
+        <option value="dev">Informatique / Développement</option>
+        <option value="commerce">Commerce / Gestion</option>
+        <option value="design">Design</option>
+        <option value="marketing">Marketing</option>
+      </select>
+      <select data-offer-type>
+        <option value="">Tous les types</option>
+        <option value="stage">Stage</option>
+        <option value="cdi">CDI</option>
+        <option value="cdd">CDD</option>
+      </select>
+      <p class="filter-bar__count" data-offer-count></p>
+    </div>
+
+    <div class="offer-grid">
+
+      <article class="card offer-card" data-offer-card
+        data-offer-search="développeur front-end junior nova digital ouagadougou"
+        data-offer-domain="dev" data-offer-type="stage">
+        <div class="offer-card__top">
+          <div class="offer-card__logo">ND</div>
+          <span class="offer-card__type">Stage</span>
+        </div>
+        <h3 class="offer-card__title">Développeur Front-end Junior</h3>
+        <p class="offer-card__company">Nova Digital</p>
+        <div class="offer-card__meta">
+          <span>📍 Ouagadougou</span>
+          <span>⏱ 3 mois</span>
+        </div>
+        <div class="offer-card__skills">
+          <span class="tag">JavaScript</span>
+          <span class="tag">HTML/CSS</span>
+        </div>
+        <div class="offer-card__footer">
+          <span class="offer-card__posted">Publiée il y a 3 jours</span>
+          <a href="candidature.html?offre=frontend-nova" class="btn btn-accent">Postuler</a>
+        </div>
+      </article>
+
+      <article class="card offer-card" data-offer-card
+        data-offer-search="assistant chef de projet atlas consulting ouagadougou"
+        data-offer-domain="commerce" data-offer-type="cdi">
+        <div class="offer-card__top">
+          <div class="offer-card__logo">AC</div>
+          <span class="offer-card__type">CDI</span>
+        </div>
+        <h3 class="offer-card__title">Assistant Chef de Projet</h3>
+        <p class="offer-card__company">Atlas Consulting</p>
+        <div class="offer-card__meta">
+          <span>📍 Ouagadougou</span>
+          <span>⏱ Temps plein</span>
+        </div>
+        <div class="offer-card__skills">
+          <span class="tag">Gestion de projet</span>
+          <span class="tag">Excel</span>
+        </div>
+        <div class="offer-card__footer">
+          <span class="offer-card__posted">Publiée il y a 5 jours</span>
+          <a href="candidature.html?offre=cdp-atlas" class="btn btn-accent">Postuler</a>
+        </div>
+      </article>
+
+      <article class="card offer-card" data-offer-card
+        data-offer-search="stagiaire marketing digital zaka média bobo-dioulasso"
+        data-offer-domain="marketing" data-offer-type="stage">
+        <div class="offer-card__top">
+          <div class="offer-card__logo">ZM</div>
+          <span class="offer-card__type">Stage</span>
+        </div>
+        <h3 class="offer-card__title">Stagiaire Marketing Digital</h3>
+        <p class="offer-card__company">Zaka Média</p>
+        <div class="offer-card__meta">
+          <span>📍 Bobo-Dioulasso</span>
+          <span>⏱ 6 mois</span>
+        </div>
+        <div class="offer-card__skills">
+          <span class="tag">Réseaux sociaux</span>
+          <span class="tag">Canva</span>
+        </div>
+        <div class="offer-card__footer">
+          <span class="offer-card__posted">Publiée il y a 1 semaine</span>
+          <a href="candidature.html?offre=marketing-zaka" class="btn btn-accent">Postuler</a>
+        </div>
+      </article>
+
+      <article class="card offer-card" data-offer-card
+        data-offer-search="développeur backend ruby on rails nova digital ouagadougou"
+        data-offer-domain="dev" data-offer-type="cdd">
+        <div class="offer-card__top">
+          <div class="offer-card__logo">ND</div>
+          <span class="offer-card__type">CDD</span>
+        </div>
+        <h3 class="offer-card__title">Développeur Back-end (Ruby on Rails)</h3>
+        <p class="offer-card__company">Nova Digital</p>
+        <div class="offer-card__meta">
+          <span>📍 Ouagadougou</span>
+          <span>⏱ 12 mois</span>
+        </div>
+        <div class="offer-card__skills">
+          <span class="tag">Ruby on Rails</span>
+          <span class="tag">PostgreSQL</span>
+        </div>
+        <div class="offer-card__footer">
+          <span class="offer-card__posted">Publiée il y a 2 semaines</span>
+          <a href="candidature.html?offre=backend-nova" class="btn btn-accent">Postuler</a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/offres.js"></script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+/* ==========================================================================
+   SkillLink — dashboard.css
+   Layout partagé par tous les tableaux de bord (sidebar + contenu).
+   ========================================================================== */
+
+.dash {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: calc(100vh - var(--header-height));
+}
+
+/* --- Sidebar --- */
+.dash__sidebar {
+  background: var(--color-ink);
+  color: var(--color-surface);
+  padding: var(--space-5) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.dash__user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.dash__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-amber);
+  color: var(--color-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.dash__user-name {
+  font-weight: 600;
+  font-size: var(--fs-small);
+}
+
+.dash__user-role {
+  font-size: var(--fs-caption);
+  opacity: 0.65;
+}
+
+.dash__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.dash__nav a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.6rem 0.7rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.dash__nav a:hover { background: rgba(255,255,255,0.06); color: var(--color-surface); }
+
+.dash__nav a.is-active {
+  background: rgba(255,255,255,0.1);
+  color: var(--color-surface);
+  font-weight: 600;
+}
+
+.dash__nav-icon {
+  width: 18px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.dash__sidebar-footer {
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+/* --- Main content --- */
+.dash__main {
+  padding: var(--space-6);
+  background: var(--color-canvas);
+}
+
+.dash__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-5);
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.dash__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: 600;
+}
+
+.dash__subtitle {
+  color: var(--color-ink-soft);
+  font-size: var(--fs-small);
+  margin-top: 0.2rem;
+}
+
+/* --- Grille de stats --- */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.stat-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.stat-card__value {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.stat-card__label {
+  font-size: var(--fs-small);
+  color: var(--color-ink-soft);
+  margin-top: 0.2rem;
+}
+
+/* --- Sections du dashboard --- */
+.dash__section {
+  margin-bottom: var(--space-6);
+}
+
+.dash__section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-3);
+}
+
+.dash__section-head h2 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.dash__section-head a {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-ink-soft);
+}
+.dash__section-head a:hover { color: var(--color-ink); }
+
+/* --- Listes (candidatures, offres, formations...) --- */
+.list-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-2);
+}
+
+.list-row__main h3 {
+  font-size: var(--fs-body);
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+
+.list-row__meta {
+  font-size: var(--fs-caption);
+  color: var(--color-ink-soft);
+}
+
+.status {
+  font-family: var(--font-mono);
+  font-size: var(--fs-caption);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.status--pending  { background: color-mix(in srgb, var(--color-amber) 18%, white); color: var(--color-amber-dark); }
+.status--accepted { background: color-mix(in srgb, var(--color-success) 16%, white); color: var(--color-success); }
+.status--refused  { background: color-mix(in srgb, var(--color-error) 14%, white); color: var(--color-error); }
+
+.empty-state {
+  text-align: center;
+  padding: var(--space-6);
+  border: 1px dashed var(--color-border-dark);
+  border-radius: var(--radius-md);
+  color: var(--color-ink-soft);
+  font-size: var(--fs-small);
+}
+
+/* --- Vues par rôle (démo prototype, JS toggle) --- */
+[data-dash-view] { display: none; }
+[data-dash-view].is-active { display: block; }
+nav.dash__nav[data-dash-view].is-active { display: flex; }
+
+/* --- Bascule de rôle (démo prototype uniquement) --- */
+.role-demo-switch {
+  display: flex;
+  gap: var(--space-1);
+  background: rgba(255,255,255,0.08);
+  padding: 0.25rem;
+  border-radius: var(--radius-sm);
+}
+
+.role-demo-switch a {
+  padding: 0.35rem 0.6rem;
+  border-radius: 4px;
+  font-size: var(--fs-caption);
+  color: rgba(255,255,255,0.6);
+}
+
+.role-demo-switch a.is-active {
+  background: var(--color-amber);
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .dash { grid-template-columns: 1fr; }
+  .dash__sidebar {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-4);
+    overflow-x: auto;
+  }
+  .dash__nav { flex-direction: row; }
+  .dash__sidebar-footer { display: none; }
+}

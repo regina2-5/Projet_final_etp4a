@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Messages — SkillLink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/messagerie.css">
+</head>
+<body>
+
+<div class="dash">
+
+  <aside class="dash__sidebar">
+    <div>
+      <a href="../index.html" class="brand" style="color:#fff; margin-bottom: var(--space-5); display:flex;">
+        <span class="brand__mark">SL</span>
+        SkillLink
+      </a>
+      <div class="dash__user">
+        <div class="dash__avatar">AK</div>
+        <div>
+          <div class="dash__user-name">Aïcha Konaté</div>
+          <div class="dash__user-role">Étudiant</div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="dash__nav" style="display:flex;">
+      <a href="dashboard.html?role=etudiant"><span class="dash__nav-icon">■</span> Tableau de bord</a>
+      <a href="profil-etudiant.html"><span class="dash__nav-icon">◔</span> Mon profil</a>
+      <a href="recherche-offres.html"><span class="dash__nav-icon">⌕</span> Offres</a>
+      <a href="recherche-formations.html"><span class="dash__nav-icon">▤</span> Formations</a>
+      <a href="messagerie.html" class="is-active"><span class="dash__nav-icon">✉</span> Messages</a>
+    </nav>
+  </aside>
+
+  <main class="dash__main" style="padding: var(--space-4);">
+    <div class="msg">
+
+      <!-- Liste des conversations -->
+      <div class="msg__list" data-msg-list>
+        <div class="msg__list-header">
+          <input type="search" placeholder="Rechercher une conversation…">
+        </div>
+
+        <div class="conv is-active" data-conv="nova">
+          <div class="conv__avatar" style="background: var(--color-clay);">ND</div>
+          <div class="conv__body">
+            <div class="conv__top">
+              <span class="conv__name">Nova Digital</span>
+              <span class="conv__time">10:42</span>
+            </div>
+            <p class="conv__preview">Merci pour votre candidature, seriez-vous dispo…</p>
+          </div>
+        </div>
+
+        <div class="conv" data-conv="formatech">
+          <div class="conv__avatar" style="background: var(--color-plum);">FT</div>
+          <div class="conv__body">
+            <div class="conv__top">
+              <span class="conv__name">Formatech</span>
+              <span class="conv__time">Hier</span>
+            </div>
+            <p class="conv__preview">La session commence bien le 1er août à 9h.</p>
+          </div>
+          <div class="conv__unread"></div>
+        </div>
+
+        <div class="conv" data-conv="atlas">
+          <div class="conv__avatar" style="background: var(--color-teal);">AC</div>
+          <div class="conv__body">
+            <div class="conv__top">
+              <span class="conv__name">Atlas Consulting</span>
+              <span class="conv__time">Lun.</span>
+            </div>
+            <p class="conv__preview">Vous : Merci beaucoup, à très vite !</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fil de discussion -->
+      <div class="msg__thread" data-msg-thread>
+        <div class="msg__thread-header">
+          <div class="conv__avatar" style="background: var(--color-clay);">ND</div>
+          <div>
+            <div class="msg__thread-name">Nova Digital</div>
+            <div class="msg__thread-role">À propos de : Développeur Front-end Junior</div>
+          </div>
+        </div>
+
+        <div class="msg__thread-body" data-thread-body>
+          <div class="bubble bubble--in">
+            Bonjour Aïcha, merci pour votre candidature au poste de Développeur Front-end Junior.
+            <span class="bubble__time">09:58</span>
+          </div>
+          <div class="bubble bubble--out">
+            Bonjour, merci beaucoup pour votre retour rapide ! Je reste disponible pour toute information complémentaire.
+            <span class="bubble__time">10:15</span>
+          </div>
+          <div class="bubble bubble--in">
+            Seriez-vous disponible pour un entretien jeudi à 14h dans nos locaux ?
+            <span class="bubble__time">10:42</span>
+          </div>
+        </div>
+
+        <form class="msg__thread-input" id="msg-form">
+          <input type="text" placeholder="Écrire un message…" required>
+          <button type="submit" class="btn btn-accent">Envoyer</button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="../js/main.js"></script>
+<script>
+  // Bascule entre conversations (démo prototype)
+  document.querySelectorAll("[data-conv]").forEach((conv) => {
+    conv.addEventListener("click", () => {
+      document.querySelectorAll("[data-conv]").forEach((c) => c.classList.remove("is-active"));
+      conv.classList.add("is-active");
+      conv.querySelector(".conv__unread")?.remove();
+
+      const name = conv.querySelector(".conv__name").textContent;
+      document.querySelector(".msg__thread-name").textContent = name;
+      document.querySelector(".conv__avatar", ".msg__thread-header");
+    });
+  });
+
+  // Envoi de message (simulation prototype, sans backend)
+  document.getElementById("msg-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const input = e.target.querySelector("input");
+    if (!input.value.trim()) return;
+
+    const body = document.querySelector("[data-thread-body]");
+    const bubble = document.createElement("div");
+    bubble.className = "bubble bubble--out";
+    const time = new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+    bubble.innerHTML = `${input.value} <span class="bubble__time">${time}</span>`;
+    body.appendChild(bubble);
+    body.scrollTop = body.scrollHeight;
+    input.value = "";
+  });
+</script>
+</body>
+</html>

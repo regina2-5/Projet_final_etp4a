@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscriptions — SkillLink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/offres.css">
+<link rel="stylesheet" href="../css/candidatures-recues.css">
+</head>
+<body>
+
+<div class="dash">
+
+  <aside class="dash__sidebar">
+    <div>
+      <a href="../index.html" class="brand" style="color:#fff; margin-bottom: var(--space-5); display:flex;">
+        <span class="brand__mark">SL</span>
+        SkillLink
+      </a>
+      <div class="dash__user">
+        <div class="dash__avatar">FT</div>
+        <div>
+          <div class="dash__user-name">Formatech</div>
+          <div class="dash__user-role">Formateur</div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="dash__nav" style="display:flex;">
+      <a href="dashboard.html?role=formateur"><span class="dash__nav-icon">■</span> Tableau de bord</a>
+      <a href="profil-formateur.html"><span class="dash__nav-icon">◔</span> Mon profil</a>
+      <a href="publier-formation.html"><span class="dash__nav-icon">+</span> Publier une formation</a>
+      <a href="inscriptions-formations.html" class="is-active"><span class="dash__nav-icon">▤</span> Inscriptions</a>
+      <a href="messagerie.html"><span class="dash__nav-icon">✉</span> Messages</a>
+    </nav>
+  </aside>
+
+  <main class="dash__main">
+    <div class="dash__header">
+      <div>
+        <h1 class="dash__title">Inscriptions</h1>
+        <p class="dash__subtitle">Suis les inscrits de chacune de tes formations.</p>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <input type="search" class="filter-bar__search" data-offer-search placeholder="Rechercher un inscrit…">
+      <select data-offer-domain>
+        <option value="">Toutes les formations</option>
+        <option value="rails">Initiation à Ruby on Rails</option>
+        <option value="uiux">Bases du Design UI/UX</option>
+      </select>
+      <p class="filter-bar__count" data-offer-count></p>
+    </div>
+
+    <section class="dash__section">
+      <div class="dash__section-head">
+        <h2>Initiation à Ruby on Rails</h2>
+        <span class="field-hint">22 / 25 places</span>
+      </div>
+
+      <div class="applicant-list">
+        <article class="applicant-row" data-offer-card data-offer-search="ibrahim sawadogo ruby on rails" data-offer-domain="rails">
+          <div class="dash__avatar" style="background: var(--color-teal);">IS</div>
+          <div class="applicant-row__main">
+            <h3>Ibrahim Sawadogo</h3>
+            <p class="applicant-row__meta">Inscrit le 20 juillet 2026</p>
+          </div>
+          <span class="status status--accepted">Confirmé</span>
+        </article>
+
+        <article class="applicant-row" data-offer-card data-offer-search="aicha konate ruby on rails" data-offer-domain="rails">
+          <div class="dash__avatar" style="background: var(--color-clay);">AK</div>
+          <div class="applicant-row__main">
+            <h3>Aïcha Konaté</h3>
+            <p class="applicant-row__meta">Inscrite le 22 juillet 2026</p>
+          </div>
+          <span class="status status--accepted">Confirmé</span>
+        </article>
+
+        <article class="applicant-row" data-offer-card data-offer-search="paul ouedraogo ruby on rails" data-offer-domain="rails">
+          <div class="dash__avatar" style="background: var(--color-plum);">PO</div>
+          <div class="applicant-row__main">
+            <h3>Paul Ouédraogo</h3>
+            <p class="applicant-row__meta">Inscrit le 24 juillet 2026 · en attente de paiement</p>
+          </div>
+          <span class="status status--pending">En attente</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="dash__section">
+      <div class="dash__section-head">
+        <h2>Bases du Design UI/UX</h2>
+        <span class="field-hint">12 / 20 places</span>
+      </div>
+
+      <div class="applicant-list">
+        <article class="applicant-row" data-offer-card data-offer-search="fatima traore design ui ux" data-offer-domain="uiux">
+          <div class="dash__avatar" style="background: var(--color-teal);">FT</div>
+          <div class="applicant-row__main">
+            <h3>Fatima Traoré</h3>
+            <p class="applicant-row__meta">Inscrite le 18 juillet 2026</p>
+          </div>
+          <span class="status status--accepted">Confirmée</span>
+        </article>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/offres.js"></script>
+</body>
+</html>

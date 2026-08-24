@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon profil — SkillLink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/profil.css">
+</head>
+<body>
+
+<div class="dash">
+
+  <aside class="dash__sidebar">
+    <div>
+      <a href="../index.html" class="brand" style="color:#fff; margin-bottom: var(--space-5); display:flex;">
+        <span class="brand__mark">SL</span>
+        SkillLink
+      </a>
+      <div class="dash__user">
+        <div class="dash__avatar">FT</div>
+        <div>
+          <div class="dash__user-name">Formatech</div>
+          <div class="dash__user-role">Formateur</div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="dash__nav" style="display:flex;">
+      <a href="dashboard.html?role=formateur"><span class="dash__nav-icon">■</span> Tableau de bord</a>
+      <a href="profil-formateur.html" class="is-active"><span class="dash__nav-icon">◔</span> Mon profil</a>
+      <a href="publier-formation.html"><span class="dash__nav-icon">+</span> Publier une formation</a>
+      <a href="inscriptions-formations.html"><span class="dash__nav-icon">▤</span> Inscriptions</a>
+      <a href="messagerie.html"><span class="dash__nav-icon">✉</span> Messages</a>
+    </nav>
+  </aside>
+
+  <main class="dash__main">
+    <div class="dash__header">
+      <div>
+        <h1 class="dash__title">Mon profil</h1>
+        <p class="dash__subtitle">Un profil clair aide les étudiants à choisir tes formations en confiance.</p>
+      </div>
+    </div>
+
+    <div class="profile-head">
+      <div class="profile-head__avatar">
+        FT
+        <div class="avatar-edit">✎</div>
+      </div>
+      <div class="profile-head__info">
+        <div class="profile-head__name">Formatech</div>
+        <div class="profile-head__meta">Organisme de formation · Développement web · Ouagadougou</div>
+      </div>
+      <div class="profile-completion">
+        <div class="profile-completion__label"><span>Profil complété</span><span>85%</span></div>
+        <div class="progress-bar"><div class="progress-bar__fill" style="width:85%;"></div></div>
+      </div>
+    </div>
+
+    <form data-validate novalidate>
+
+      <div class="form-panel">
+        <h2 class="form-panel__title">Informations générales</h2>
+        <p class="form-panel__desc">Visibles sur toutes tes fiches de formation.</p>
+
+        <div class="field">
+          <label for="p-name">Nom / Organisme</label>
+          <input type="text" id="p-name" value="Formatech" required>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="p-expertise">Domaine d'expertise principal</label>
+            <select id="p-expertise">
+              <option selected>Informatique / Développement</option>
+              <option>Design</option>
+              <option>Gestion de projet</option>
+              <option>Marketing</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="p-city">Ville</label>
+            <input type="text" id="p-city" value="Ouagadougou">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="p-bio">Présentation</label>
+          <textarea id="p-bio" rows="4" placeholder="Présente ton parcours, tes certifications, ton approche pédagogique…">Formatech accompagne depuis 4 ans les jeunes développeurs à travers des formations pratiques en Ruby on Rails, JavaScript et bases de données. Plus de 150 étudiants formés.</textarea>
+        </div>
+      </div>
+
+      <div class="form-panel">
+        <h2 class="form-panel__title">Domaines de compétence</h2>
+        <p class="form-panel__desc">Ces tags aident les étudiants à te trouver via la recherche.</p>
+
+        <div class="skills-input">
+          <input type="text" data-skill-input placeholder="Ex : Ruby on Rails, JavaScript, Pédagogie…">
+          <button type="button" class="btn btn-ghost" data-skill-add>Ajouter</button>
+        </div>
+
+        <div class="skills-list" data-skills-list>
+          <span class="skill-tag">Ruby on Rails <button type="button" aria-label="Retirer">×</button></span>
+          <span class="skill-tag">JavaScript <button type="button" aria-label="Retirer">×</button></span>
+          <span class="skill-tag">Pédagogie <button type="button" aria-label="Retirer">×</button></span>
+        </div>
+      </div>
+
+      <div class="form-panel">
+        <h2 class="form-panel__title">Photo / Logo</h2>
+        <p class="form-panel__desc">Format carré recommandé, 2 Mo maximum.</p>
+
+        <div class="upload-zone" data-upload-zone>
+          <div class="upload-zone__icon">⇧</div>
+          <p class="upload-zone__text">Clique ou glisse une image ici</p>
+          <p class="upload-zone__filename" data-upload-filename>Fichier actuel : logo_formatech.png</p>
+          <input type="file" accept=".png,.jpg,.jpeg" hidden>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn btn-ghost">Annuler</button>
+        <button type="submit" class="btn btn-accent">Enregistrer les modifications</button>
+      </div>
+    </form>
+  </main>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/profil.js"></script>
+</body>
+</html>

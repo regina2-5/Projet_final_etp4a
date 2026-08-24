@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon profil — SkillLink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/profil.css">
+</head>
+<body>
+
+<div class="dash">
+
+  <aside class="dash__sidebar">
+    <div>
+      <a href="../index.html" class="brand" style="color:#fff; margin-bottom: var(--space-5); display:flex;">
+        <span class="brand__mark">SL</span>
+        SkillLink
+      </a>
+      <div class="dash__user">
+        <div class="dash__avatar">AK</div>
+        <div>
+          <div class="dash__user-name">Aïcha Konaté</div>
+          <div class="dash__user-role">Étudiant</div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="dash__nav" style="display:flex;">
+      <a href="dashboard.html?role=etudiant"><span class="dash__nav-icon">■</span> Tableau de bord</a>
+      <a href="profil-etudiant.html" class="is-active"><span class="dash__nav-icon">◔</span> Mon profil</a>
+      <a href="recherche-offres.html"><span class="dash__nav-icon">⌕</span> Offres</a>
+      <a href="recherche-formations.html"><span class="dash__nav-icon">▤</span> Formations</a>
+      <a href="messagerie.html"><span class="dash__nav-icon">✉</span> Messages</a>
+    </nav>
+  </aside>
+
+  <main class="dash__main">
+    <div class="dash__header">
+      <div>
+        <h1 class="dash__title">Mon profil</h1>
+        <p class="dash__subtitle">Un profil complet augmente tes chances d'être repéré·e par les entreprises.</p>
+      </div>
+    </div>
+
+    <div class="profile-head">
+      <div class="profile-head__avatar">
+        AK
+        <div class="avatar-edit">✎</div>
+      </div>
+      <div class="profile-head__info">
+        <div class="profile-head__name">Aïcha Konaté</div>
+        <div class="profile-head__meta">Étudiante en Informatique · Ouagadougou</div>
+      </div>
+      <div class="profile-completion">
+        <div class="profile-completion__label"><span>Profil complété</span><span>70%</span></div>
+        <div class="progress-bar"><div class="progress-bar__fill" style="width:70%;"></div></div>
+      </div>
+    </div>
+
+    <form data-validate novalidate>
+
+      <div class="form-panel">
+        <h2 class="form-panel__title">Informations personnelles</h2>
+        <p class="form-panel__desc">Ces informations apparaissent sur ton profil public visible par les entreprises.</p>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="p-firstname">Prénom</label>
+            <input type="text" id="p-firstname" value="Aïcha" required>
+          </div>
+          <div class="field">
+            <label for="p-lastname">Nom</label>
+            <input type="text" id="p-lastname" value="Konaté" required>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="p-field">Domaine d'études</label>
+            <select id="p-field">
+              <option selected>Informatique / Développement</option>
+              <option>Commerce / Gestion</option>
+              <option>Design / Création</option>
+              <option>Ingénierie</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="p-city">Ville</label>
+            <input type="text" id="p-city" value="Ouagadougou">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="p-bio">À propos de moi</label>
+          <textarea id="p-bio" rows="4" placeholder="Présente-toi en quelques phrases : ton parcours, ce que tu recherches…">Étudiante en 3e année d'informatique, je recherche un stage en développement web pour mettre en pratique mes compétences en Ruby on Rails et JavaScript.</textarea>
+        </div>
+      </div>
+
+      <div class="form-panel">
+        <h2 class="form-panel__title">Compétences</h2>
+        <p class="form-panel__desc">Ajoute les compétences qui te représentent le mieux — elles servent aussi aux recommandations d'offres.</p>
+
+        <div class="skills-input">
+          <input type="text" data-skill-input placeholder="Ex : Ruby on Rails, JavaScript, Gestion de projet…">
+          <button type="button" class="btn btn-ghost" data-skill-add>Ajouter</button>
+        </div>
+
+        <div class="skills-list" data-skills-list>
+          <span class="skill-tag">Ruby on Rails <button type="button" aria-label="Retirer">×</button></span>
+          <span class="skill-tag">JavaScript <button type="button" aria-label="Retirer">×</button></span>
+          <span class="skill-tag">HTML / CSS <button type="button" aria-label="Retirer">×</button></span>
+          <span class="skill-tag">PostgreSQL <button type="button" aria-label="Retirer">×</button></span>
+        </div>
+      </div>
+
+      <div class="form-panel">
+        <h2 class="form-panel__title">CV</h2>
+        <p class="form-panel__desc">Format PDF recommandé, 5 Mo maximum.</p>
+
+        <div class="upload-zone" data-upload-zone>
+          <div class="upload-zone__icon">⇧</div>
+          <p class="upload-zone__text">Clique ou glisse ton CV ici</p>
+          <p class="upload-zone__filename" data-upload-filename>Fichier actuel : CV_Aicha_Konate.pdf</p>
+          <input type="file" accept=".pdf,.doc,.docx" hidden>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn btn-ghost">Annuler</button>
+        <button type="submit" class="btn btn-accent">Enregistrer les modifications</button>
+      </div>
+    </form>
+  </main>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/profil.js"></script>
+</body>
+</html>

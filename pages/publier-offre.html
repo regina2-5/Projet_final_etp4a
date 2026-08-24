@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publier une offre — SkillLink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/offres.css">
+</head>
+<body>
+
+<div class="dash">
+
+  <aside class="dash__sidebar">
+    <div>
+      <a href="../index.html" class="brand" style="color:#fff; margin-bottom: var(--space-5); display:flex;">
+        <span class="brand__mark">SL</span>
+        SkillLink
+      </a>
+      <div class="dash__user">
+        <div class="dash__avatar">ND</div>
+        <div>
+          <div class="dash__user-name">Nova Digital</div>
+          <div class="dash__user-role">Entreprise</div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="dash__nav" style="display:flex;">
+      <a href="dashboard.html?role=entreprise"><span class="dash__nav-icon">■</span> Tableau de bord</a>
+      <a href="profil-entreprise.html"><span class="dash__nav-icon">◔</span> Profil entreprise</a>
+      <a href="publier-offre.html" class="is-active"><span class="dash__nav-icon">+</span> Publier une offre</a>
+      <a href="candidatures-recues.html"><span class="dash__nav-icon">▤</span> Candidatures</a>
+      <a href="messagerie.html"><span class="dash__nav-icon">✉</span> Messages</a>
+    </nav>
+  </aside>
+
+  <main class="dash__main">
+    <div class="dash__header">
+      <div>
+        <h1 class="dash__title">Publier une offre</h1>
+        <p class="dash__subtitle">Elle sera visible immédiatement par tous les étudiants inscrits.</p>
+      </div>
+    </div>
+
+    <div class="publish-layout">
+
+      <form data-publish-form data-validate novalidate>
+        <div class="form-panel">
+          <h2 class="form-panel__title">Détails de l'offre</h2>
+
+          <div class="field">
+            <label for="offer-title">Titre du poste</label>
+            <input type="text" id="offer-title" required placeholder="Ex : Développeur Front-end Junior">
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="offer-type">Type de contrat</label>
+              <select id="offer-type" required>
+                <option value="">Sélectionner…</option>
+                <option>Stage</option>
+                <option>CDI</option>
+                <option>CDD</option>
+                <option>Alternance</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="offer-domain">Domaine</label>
+              <select id="offer-domain">
+                <option value="">Sélectionner…</option>
+                <option>Informatique / Développement</option>
+                <option>Commerce / Gestion</option>
+                <option>Design</option>
+                <option>Marketing</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="offer-location">Localisation</label>
+              <input type="text" id="offer-location" placeholder="Ex : Ouagadougou">
+            </div>
+            <div class="field">
+              <label for="offer-deadline">Date limite de candidature</label>
+              <input type="date" id="offer-deadline">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="offer-description">Description du poste</label>
+            <textarea id="offer-description" rows="6" required placeholder="Missions, responsabilités, ce que vous offrez au candidat…"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="offer-skills">Compétences requises</label>
+            <input type="text" id="offer-skills" placeholder="Ex : JavaScript, HTML/CSS (séparées par des virgules)">
+            <p class="field-hint">Ces compétences seront comparées à celles des profils étudiants pour les recommandations.</p>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-ghost">Enregistrer comme brouillon</button>
+          <button type="submit" class="btn btn-accent">Publier l'offre</button>
+        </div>
+      </form>
+
+      <div class="publish-preview">
+        <p class="publish-preview__label">Aperçu — vu par les étudiants</p>
+        <article class="card offer-card">
+          <div class="offer-card__top">
+            <div class="offer-card__logo">ND</div>
+            <span class="offer-card__type" data-preview-type>Type</span>
+          </div>
+          <h3 class="offer-card__title" data-preview-title>Titre de l'offre</h3>
+          <p class="offer-card__company">Nova Digital</p>
+          <div class="offer-card__meta">
+            <span data-preview-meta>Domaine · Localisation</span>
+          </div>
+          <p style="font-size: var(--fs-small); color: var(--color-ink-soft);" data-preview-description>
+            La description de l'offre apparaîtra ici au fur et à mesure de la saisie.
+          </p>
+          <div class="offer-card__footer">
+            <span class="offer-card__posted">Publiée à l'instant</span>
+            <span class="btn btn-accent" style="pointer-events:none;">Postuler</span>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/offres.js"></script>
+</body>
+</html>
