@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkillLink — Connecter étudiants, entreprises et formateurs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="index.html" class="brand">
+      <span class="brand__mark">SL</span>
+      SkillLink
+    </a>
+    <nav class="main-nav" data-nav>
+      <a href="#roles">Comment ça marche</a>
+      <a href="pages/recherche-offres.html">Offres</a>
+      <a href="pages/recherche-formations.html">Formations</a>
+    </nav>
+    <div class="header-actions">
+      <a href="pages/connexion.html" class="btn btn-ghost">Connexion</a>
+      <a href="pages/inscription.html" class="btn btn-primary">Créer un compte</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <p class="eyebrow">Plateforme d'insertion professionnelle</p>
+      <h1 class="hero__title">
+        L'endroit où une compétence <span class="hero__accent">rencontre</span> une opportunité.
+      </h1>
+      <p class="hero__lead">
+        SkillLink relie étudiants, entreprises et formateurs sur une seule
+        plateforme : profils clairs, offres ciblées, candidatures suivies —
+        sans les allers-retours qui ralentissent aujourd'hui le recrutement
+        des jeunes diplômés.
+      </p>
+      <div class="hero__cta">
+        <a href="#roles" class="btn btn-accent">Choisir mon profil</a>
+        <a href="pages/recherche-offres.html" class="btn btn-ghost">Voir les offres</a>
+      </div>
+      <dl class="hero__stats">
+        <div><dt>3</dt><dd>types de comptes</dd></div>
+        <div><dt>1</dt><dd>tableau de bord par rôle</dd></div>
+        <div><dt>0</dt><dd>friction pour postuler</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- SÉLECTEUR DE RÔLE -->
+  <section class="section" id="roles">
+    <div class="container">
+      <h2 class="section__title">Je suis…</h2>
+      <p class="section__lead">
+        Choisis ton profil pour créer un compte adapté à ton usage. Tu pourras
+        toujours changer d'avis, mais chaque profil a son propre tableau de bord.
+      </p>
+
+      <form class="role-picker" action="pages/inscription.html" method="get">
+        <label class="role-picker__option">
+          <input type="radio" name="role" value="etudiant" checked>
+          <div class="role-picker__card">
+            <span class="badge badge--student">Étudiant</span>
+            <h3 class="role-picker__title">Trouver un stage, un emploi ou une formation</h3>
+            <p class="role-picker__desc">
+              Crée ton profil, ajoute tes compétences et ton CV, postule en
+              ligne et suis tes candidatures.
+            </p>
+            <ul class="role-picker__list" role="list">
+              <li>Profil + CV</li>
+              <li>Recherche d'offres et de formations</li>
+              <li>Candidature en un clic</li>
+            </ul>
+          </div>
+        </label>
+
+        <label class="role-picker__option">
+          <input type="radio" name="role" value="entreprise">
+          <div class="role-picker__card">
+            <span class="badge badge--company">Entreprise</span>
+            <h3 class="role-picker__title">Recruter des profils qualifiés</h3>
+            <p class="role-picker__desc">
+              Publie tes offres de stage ou d'emploi et gère tes candidatures
+              depuis un tableau de bord centralisé.
+            </p>
+            <ul class="role-picker__list" role="list">
+              <li>Publication d'offres</li>
+              <li>Suivi des candidatures</li>
+              <li>Échange direct avec les candidats</li>
+            </ul>
+          </div>
+        </label>
+
+        <label class="role-picker__option">
+          <input type="radio" name="role" value="formateur">
+          <div class="role-picker__card">
+            <span class="badge badge--trainer">Formateur</span>
+            <h3 class="role-picker__title">Faire connaître ses formations</h3>
+            <p class="role-picker__desc">
+              Propose tes sessions à un public ciblé et gère tes inscriptions
+              simplement.
+            </p>
+            <ul class="role-picker__list" role="list">
+              <li>Publication de formations</li>
+              <li>Gestion des sessions</li>
+              <li>Suivi des inscriptions</li>
+            </ul>
+          </div>
+        </label>
+
+        <button type="submit" class="btn btn-primary role-picker__submit">
+          Continuer l'inscription
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- COMMENT ÇA MARCHE -->
+  <section class="section section--muted">
+    <div class="container">
+      <h2 class="section__title">Comment ça marche</h2>
+      <ol class="steps" role="list">
+        <li class="steps__item">
+          <span class="steps__index">01</span>
+          <h3>Crée ton compte</h3>
+          <p>Choisis ton profil et complète tes informations en quelques minutes.</p>
+        </li>
+        <li class="steps__item">
+          <span class="steps__index">02</span>
+          <h3>Complète ton espace</h3>
+          <p>Profil, compétences, offres ou formations selon ton rôle.</p>
+        </li>
+        <li class="steps__item">
+          <span class="steps__index">03</span>
+          <h3>Connecte-toi aux autres</h3>
+          <p>Postule, recrute ou forme — directement depuis ton tableau de bord.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="footer-col">
+      <div class="brand">
+        <span class="brand__mark">SL</span>
+        SkillLink
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Plateforme</h4>
+      <ul role="list">
+        <li><a href="pages/recherche-offres.html">Offres</a></li>
+        <li><a href="pages/recherche-formations.html">Formations</a></li>
+        <li><a href="#roles">Créer un compte</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Compte</h4>
+      <ul role="list">
+        <li><a href="pages/connexion.html">Connexion</a></li>
+        <li><a href="pages/inscription.html">Inscription</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    SkillLink — Projet ETP4A Groupe 7
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

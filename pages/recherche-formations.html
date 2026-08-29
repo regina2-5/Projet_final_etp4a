@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formations — SkillLink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/offres.css">
+</head>
+<body>
+
+<div class="dash">
+
+  <aside class="dash__sidebar">
+    <div>
+      <a href="../index.html" class="brand" style="color:#fff; margin-bottom: var(--space-5); display:flex;">
+        <span class="brand__mark">SL</span>
+        SkillLink
+      </a>
+      <div class="dash__user">
+        <div class="dash__avatar">AK</div>
+        <div>
+          <div class="dash__user-name">Aïcha Konaté</div>
+          <div class="dash__user-role">Étudiant</div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="dash__nav" style="display:flex;">
+      <a href="dashboard.html?role=etudiant"><span class="dash__nav-icon">■</span> Tableau de bord</a>
+      <a href="profil-etudiant.html"><span class="dash__nav-icon">◔</span> Mon profil</a>
+      <a href="recherche-offres.html"><span class="dash__nav-icon">⌕</span> Offres</a>
+      <a href="recherche-formations.html" class="is-active"><span class="dash__nav-icon">▤</span> Formations</a>
+      <a href="messagerie.html"><span class="dash__nav-icon">✉</span> Messages</a>
+    </nav>
+  </aside>
+
+  <main class="dash__main">
+    <div class="dash__header">
+      <div>
+        <h1 class="dash__title">Formations</h1>
+        <p class="dash__subtitle">Développe tes compétences avec des formateurs partenaires.</p>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <input type="search" class="filter-bar__search" data-offer-search placeholder="Rechercher une formation, un formateur…">
+      <select data-offer-domain>
+        <option value="">Tous les domaines</option>
+        <option value="dev">Informatique / Développement</option>
+        <option value="design">Design</option>
+        <option value="gestion">Gestion de projet</option>
+      </select>
+      <select data-offer-type>
+        <option value="">Tous les formats</option>
+        <option value="ligne">En ligne</option>
+        <option value="presentiel">Présentiel</option>
+      </select>
+      <p class="filter-bar__count" data-offer-count></p>
+    </div>
+
+    <div class="offer-grid">
+
+      <article class="card offer-card" data-offer-card
+        data-offer-search="initiation ruby on rails formatech en ligne"
+        data-offer-domain="dev" data-offer-type="ligne">
+        <div class="offer-card__top">
+          <div class="offer-card__logo">FT</div>
+          <span class="offer-card__type">En ligne</span>
+        </div>
+        <h3 class="offer-card__title">Initiation à Ruby on Rails</h3>
+        <p class="offer-card__company">Par Formatech</p>
+        <div class="offer-card__meta">
+          <span>🗓 6 semaines</span>
+          <span>👥 22 inscrits</span>
+        </div>
+        <div class="offer-card__skills">
+          <span class="tag">Ruby on Rails</span>
+          <span class="tag">MVC</span>
+        </div>
+        <div class="offer-card__footer">
+          <span class="offer-card__posted">Débute le 1er août</span>
+          <a href="#" class="btn btn-accent">S'inscrire</a>
+        </div>
+      </article>
+
+      <article class="card offer-card" data-offer-card
+        data-offer-search="bases design ui ux formatech en ligne"
+        data-offer-domain="design" data-offer-type="ligne">
+        <div class="offer-card__top">
+          <div class="offer-card__logo">FT</div>
+          <span class="offer-card__type">En ligne</span>
+        </div>
+        <h3 class="offer-card__title">Bases du Design UI/UX</h3>
+        <p class="offer-card__company">Par Formatech</p>
+        <div class="offer-card__meta">
+          <span>🗓 4 semaines</span>
+          <span>👥 12 inscrits</span>
+        </div>
+        <div class="offer-card__skills">
+          <span class="tag">Figma</span>
+          <span class="tag">UX Research</span>
+        </div>
+        <div class="offer-card__footer">
+          <span class="offer-card__posted">Débute le 15 août</span>
+          <a href="#" class="btn btn-accent">S'inscrire</a>
+        </div>
+      </article>
+
+      <article class="card offer-card" data-offer-card
+        data-offer-search="gestion de projet agile scrum academy pro presentiel"
+        data-offer-domain="gestion" data-offer-type="presentiel">
+        <div class="offer-card__top">
+          <div class="offer-card__logo">AP</div>
+          <span class="offer-card__type">Présentiel</span>
+        </div>
+        <h3 class="offer-card__title">Gestion de projet Agile / Scrum</h3>
+        <p class="offer-card__company">Par Academy Pro</p>
+        <div class="offer-card__meta">
+          <span>🗓 2 semaines</span>
+          <span>📍 Ouagadougou</span>
+        </div>
+        <div class="offer-card__skills">
+          <span class="tag">Scrum</span>
+          <span class="tag">Jira</span>
+        </div>
+        <div class="offer-card__footer">
+          <span class="offer-card__posted">Débute le 5 septembre</span>
+          <a href="#" class="btn btn-accent">S'inscrire</a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/offres.js"></script>
+</body>
+</html>

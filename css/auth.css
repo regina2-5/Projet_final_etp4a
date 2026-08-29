@@ -1,0 +1,188 @@
+/* ==========================================================================
+   SkillLink — auth.css
+   Styles partagés par inscription.html et connexion.html.
+   ========================================================================== */
+
+.auth {
+  min-height: calc(100vh - var(--header-height));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.auth__panel {
+  padding: var(--space-8) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth__form-wrap {
+  max-width: 420px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.auth__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-caption);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-amber-dark);
+  margin-bottom: var(--space-2);
+}
+
+.auth__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+
+.auth__subtitle {
+  color: var(--color-ink-soft);
+  font-size: var(--fs-small);
+  margin-bottom: var(--space-5);
+}
+
+/* --- Sélecteur de rôle compact (onglets) --- */
+.role-tabs {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.role-tabs input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.role-tabs__tab {
+  flex: 1;
+  text-align: center;
+  padding: 0.55rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-dark);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-ink-soft);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.role-tabs input:checked + .role-tabs__tab {
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+  color: var(--color-surface);
+}
+
+/* --- Groupes de champs spécifiques à un rôle --- */
+.role-fields {
+  display: none;
+  flex-direction: column;
+}
+
+.role-fields.is-active {
+  display: flex;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.auth__submit {
+  width: 100%;
+  margin-top: var(--space-2);
+}
+
+.auth__switch {
+  margin-top: var(--space-5);
+  font-size: var(--fs-small);
+  color: var(--color-ink-soft);
+  text-align: center;
+}
+
+.auth__switch a {
+  color: var(--color-ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: var(--fs-small);
+  color: var(--color-ink-soft);
+  margin-bottom: var(--space-4);
+}
+
+.checkbox-field input { margin-top: 0.2rem; }
+
+/* --- Panneau latéral illustratif --- */
+.auth__side {
+  background: var(--color-ink);
+  color: var(--color-surface);
+  padding: var(--space-8) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth__side::before {
+  content: "";
+  position: absolute;
+  inset: auto -20% -30% auto;
+  width: 60%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--color-amber) 35%, transparent), transparent 70%);
+}
+
+.auth__side-quote {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: var(--lh-tight);
+  max-width: 30ch;
+  position: relative;
+}
+
+.auth__side-meta {
+  font-size: var(--fs-small);
+  opacity: 0.75;
+  position: relative;
+}
+
+.auth__side-stats {
+  display: flex;
+  gap: var(--space-5);
+  position: relative;
+}
+
+.auth__side-stats dt {
+  font-family: var(--font-mono);
+  font-size: 1.6rem;
+  color: var(--color-amber);
+}
+
+.auth__side-stats dd {
+  font-size: var(--fs-caption);
+  opacity: 0.75;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .auth { grid-template-columns: 1fr; }
+  .auth__side { display: none; }
+  .auth__panel { padding: var(--space-6) var(--space-4); }
+}
+
+@media (max-width: 520px) {
+  .field-row { grid-template-columns: 1fr; }
+  .role-tabs { flex-direction: column; }
+}

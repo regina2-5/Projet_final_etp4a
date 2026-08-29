@@ -1,0 +1,121 @@
+/* ==========================================================================
+   SkillLink — Composants réutilisables
+   (cartes, formulaires, badges de rôle, tags de compétences...)
+   ========================================================================== */
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+/* --- Badges de rôle : chaque rôle a sa couleur, cohérente partout --- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-caption);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+}
+
+.badge--student  { background: color-mix(in srgb, var(--color-teal) 14%, white); color: var(--color-teal); }
+.badge--company   { background: color-mix(in srgb, var(--color-clay) 14%, white); color: var(--color-clay); }
+.badge--trainer   { background: color-mix(in srgb, var(--color-plum) 14%, white); color: var(--color-plum); }
+
+/* --- Tags de compétences --- */
+.tag {
+  display: inline-block;
+  font-size: var(--fs-caption);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-canvas);
+  border: 1px solid var(--color-border);
+  color: var(--color-ink-soft);
+}
+
+/* --- Formulaires --- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+}
+
+.field label {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.field input,
+.field select,
+.field textarea {
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  font-size: var(--fs-body);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--color-ink);
+}
+
+.field-hint {
+  font-size: var(--fs-caption);
+  color: var(--color-ink-soft);
+}
+
+.field-error {
+  font-size: var(--fs-caption);
+  color: var(--color-error);
+}
+
+/* --- Sélecteur de type de compte (cartes cliquables) --- */
+.role-picker {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.role-picker__option {
+  display: block;
+  cursor: pointer;
+}
+
+.role-picker__option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.role-picker__card {
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.role-picker__option input:checked + .role-picker__card {
+  border-color: var(--color-ink);
+  background: var(--color-canvas);
+}
+
+@media (max-width: 720px) {
+  .role-picker { grid-template-columns: 1fr; }
+}

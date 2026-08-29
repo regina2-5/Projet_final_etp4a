@@ -1,0 +1,193 @@
+/* ==========================================================================
+   SkillLink — messagerie.css
+   Liste de conversations + fil de discussion, façon messagerie classique.
+   ========================================================================== */
+
+.msg {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  height: calc(100vh - var(--header-height));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.msg__list {
+  border-right: 1px solid var(--color-border);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.msg__list-header {
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.msg__list-header input {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-small);
+  background: var(--color-canvas);
+}
+
+.conv {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  cursor: pointer;
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.15s ease;
+}
+
+.conv:hover { background: var(--color-canvas); }
+.conv.is-active { background: var(--color-canvas); border-left: 3px solid var(--color-ink); }
+
+.conv__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--fs-caption);
+  color: var(--color-surface);
+  flex-shrink: 0;
+}
+
+.conv__body { flex: 1; min-width: 0; }
+
+.conv__top {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.conv__name {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.conv__time {
+  font-size: var(--fs-caption);
+  color: var(--color-ink-soft);
+  flex-shrink: 0;
+}
+
+.conv__preview {
+  font-size: var(--fs-caption);
+  color: var(--color-ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.conv__unread {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-amber-dark);
+  flex-shrink: 0;
+}
+
+.msg__thread {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.msg__thread-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.msg__thread-name { font-weight: 600; font-size: var(--fs-small); }
+.msg__thread-role { font-size: var(--fs-caption); color: var(--color-ink-soft); }
+
+.msg__thread-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background: var(--color-canvas);
+}
+
+.bubble {
+  max-width: 70%;
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius-md);
+  font-size: var(--fs-small);
+  line-height: var(--lh-normal);
+}
+
+.bubble--in {
+  align-self: flex-start;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-bottom-left-radius: 4px;
+}
+
+.bubble--out {
+  align-self: flex-end;
+  background: var(--color-ink);
+  color: var(--color-surface);
+  border-bottom-right-radius: 4px;
+}
+
+.bubble__time {
+  display: block;
+  font-size: var(--fs-caption);
+  opacity: 0.6;
+  margin-top: 0.25rem;
+}
+
+.msg__thread-input {
+  display: flex;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.msg__thread-input input {
+  flex: 1;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-small);
+}
+
+.msg__empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-ink-soft);
+  font-size: var(--fs-small);
+}
+
+@media (max-width: 860px) {
+  .msg { grid-template-columns: 1fr; }
+  .msg__list.is-hidden-mobile,
+  .msg__thread.is-hidden-mobile { display: none; }
+}
+
+/* --- Ajustements de clarté --- */
+.conv:has(.conv__unread) .conv__name,
+.conv:has(.conv__unread) .conv__preview {
+  font-weight: 700;
+  color: var(--color-ink);
+}

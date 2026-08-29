@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Créer un compte — SkillLink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="../index.html" class="brand">
+      <span class="brand__mark">SL</span>
+      SkillLink
+    </a>
+    <div class="header-actions">
+      <span style="font-size: var(--fs-small); color: var(--color-ink-soft);">Déjà un compte ?</span>
+      <a href="connexion.html" class="btn btn-ghost">Se connecter</a>
+    </div>
+  </div>
+</header>
+
+<main class="auth">
+
+  <div class="auth__panel">
+    <div class="auth__form-wrap">
+      <p class="auth__eyebrow">Inscription</p>
+      <h1 class="auth__title">Crée ton compte</h1>
+      <p class="auth__subtitle">Choisis ton profil, ça personnalise ton tableau de bord.</p>
+
+      <fieldset class="role-tabs" style="border:none; padding:0; margin-bottom: var(--space-5);">
+        <legend class="sr-only" style="position:absolute; width:1px; height:1px; overflow:hidden;">Type de compte</legend>
+        <label>
+          <input type="radio" name="role-tab" value="etudiant" data-role-tab checked>
+          <span class="role-tabs__tab">Étudiant</span>
+        </label>
+        <label>
+          <input type="radio" name="role-tab" value="entreprise" data-role-tab>
+          <span class="role-tabs__tab">Entreprise</span>
+        </label>
+        <label>
+          <input type="radio" name="role-tab" value="formateur" data-role-tab>
+          <span class="role-tabs__tab">Formateur</span>
+        </label>
+      </fieldset>
+
+      <form data-validate novalidate action="./dashboard.html" method="get">
+
+        <!-- Champs communs -->
+        <div class="field">
+          <label for="email">Adresse email</label>
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="toi@exemple.com">
+        </div>
+
+        <div class="field">
+          <label for="password">Mot de passe</label>
+          <input type="password" id="password" name="password" required autocomplete="new-password" minlength="8">
+          <p class="field-hint">8 caractères minimum.</p>
+        </div>
+
+        <!-- Champs Étudiant -->
+        <div class="role-fields is-active" data-role-fields="etudiant">
+          <div class="field-row">
+            <div class="field">
+              <label for="student-firstname">Prénom</label>
+              <input type="text" id="student-firstname" name="firstname" required autocomplete="given-name">
+            </div>
+            <div class="field">
+              <label for="student-lastname">Nom</label>
+              <input type="text" id="student-lastname" name="lastname" required autocomplete="family-name">
+            </div>
+          </div>
+          <div class="field">
+            <label for="student-field">Domaine d'études</label>
+            <select id="student-field" name="field_of_study">
+              <option value="">Sélectionner…</option>
+              <option>Informatique / Développement</option>
+              <option>Commerce / Gestion</option>
+              <option>Design / Création</option>
+              <option>Ingénierie</option>
+              <option>Autre</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Champs Entreprise -->
+        <div class="role-fields" data-role-fields="entreprise">
+          <div class="field">
+            <label for="company-name">Nom de l'entreprise</label>
+            <input type="text" id="company-name" name="company_name" required>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="company-sector">Secteur d'activité</label>
+              <input type="text" id="company-sector" name="sector" placeholder="Ex : Fintech">
+            </div>
+            <div class="field">
+              <label for="company-size">Taille</label>
+              <select id="company-size" name="size">
+                <option value="">Sélectionner…</option>
+                <option>1–10</option>
+                <option>11–50</option>
+                <option>51–200</option>
+                <option>200+</option>
+              </select>
+            </div>
+          </div>
+          <p class="field-hint">
+            Ton compte entreprise sera vérifié par un administrateur avant publication d'offres.
+          </p>
+        </div>
+
+        <!-- Champs Formateur -->
+        <div class="role-fields" data-role-fields="formateur">
+          <div class="field-row">
+            <div class="field">
+              <label for="trainer-firstname">Prénom</label>
+              <input type="text" id="trainer-firstname" name="firstname" required>
+            </div>
+            <div class="field">
+              <label for="trainer-lastname">Nom</label>
+              <input type="text" id="trainer-lastname" name="lastname" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="trainer-expertise">Domaine d'expertise</label>
+            <input type="text" id="trainer-expertise" name="expertise" placeholder="Ex : Développement web">
+          </div>
+        </div>
+
+        <label class="checkbox-field">
+          <input type="checkbox" required>
+          <span>J'accepte les conditions d'utilisation et la politique de confidentialité.</span>
+        </label>
+
+        <button type="submit" class="btn btn-accent auth__submit">Créer mon compte</button>
+      </form>
+
+      <p class="auth__switch">
+        Déjà inscrit ? <a href="./connexion.html">Se connecter</a>
+      </p>
+    </div>
+  </div>
+
+  <aside class="auth__side">
+    <div>
+      <p class="auth__side-quote">
+        « Ce n'est pas la relation qui manque, c'est le point de contact. »
+      </p>
+      <p class="auth__side-meta" style="margin-top: var(--space-3);">
+        SkillLink connecte les trois — sur une seule plateforme.
+      </p>
+    </div>
+    <dl class="auth__side-stats">
+      <div><dt>01</dt><dd>Créer un compte</dd></div>
+      <div><dt>02</dt><dd>Compléter son profil</dd></div>
+      <div><dt>03</dt><dd>Se connecter aux autres</dd></div>
+    </dl>
+  </aside>
+
+</main>
+
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+</body>
+</html>

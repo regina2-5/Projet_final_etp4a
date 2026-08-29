@@ -1,0 +1,64 @@
+/* ==========================================================================
+   SkillLink — Design Tokens
+   Identité : SaaS professionnel, chaleureux et accessible.
+   Métaphore directrice : le trajet (étudiant → compétence → opportunité).
+   ========================================================================== */
+
+:root {
+  /* --- Couleurs primaires --- */
+  --color-ink:        #14213D;  /* bleu nuit profond — texte, header, sérieux/confiance */
+  --color-ink-soft:    #2C3B5A;  /* variante plus douce pour texte secondaire sur fond clair */
+  --color-canvas:      #F7F5F0;  /* fond principal, blanc cassé chaud (pas de blanc pur) */
+  --color-surface:     #FFFFFF;  /* cartes, panneaux */
+
+  /* --- Accent signature --- */
+  --color-amber:       #E8A33D;  /* accent chaleureux — CTA, énergie, opportunité */
+  --color-amber-dark:  #C77F1F;  /* hover / contraste renforcé */
+
+  /* --- Accent secondaire (rôles) --- */
+  --color-teal:        #1F7A6C;  /* étudiant / croissance */
+  --color-clay:        #B5502C;  /* entreprise / ancrage */
+  --color-plum:        #5B3E75;  /* formateur / savoir */
+
+  /* --- États --- */
+  --color-success:     #2E7D4F;
+  --color-error:       #B3261E;
+  --color-border:      #DCD7CC;
+  --color-border-dark: #B9B2A2;
+
+  /* --- Typographie --- */
+  --font-display: "Fraunces", "Georgia", serif;      /* titres — caractère, chaleur */
+  --font-body:    "Inter", "Segoe UI", sans-serif;    /* texte courant — clarté */
+  --font-mono:    "IBM Plex Mono", monospace;         /* données, badges, labels techniques */
+
+  --fs-h1: clamp(2.2rem, 4vw, 3.4rem);
+  --fs-h2: clamp(1.6rem, 2.6vw, 2.2rem);
+  --fs-h3: 1.3rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-caption: 0.75rem;
+
+  --lh-tight: 1.15;
+  --lh-normal: 1.5;
+
+  /* --- Espacements (échelle 8px) --- */
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4.5rem;
+  --space-8: 6rem;
+
+  /* --- Rayon / ombres --- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-card: 0 4px 16px rgba(20, 33, 61, 0.08);
+  --shadow-card-hover: 0 8px 28px rgba(20, 33, 61, 0.14);
+
+  /* --- Layout --- */
+  --container-max: 1180px;
+  --header-height: 76px;
+}

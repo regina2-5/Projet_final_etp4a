@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profil entreprise — SkillLink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/profil.css">
+</head>
+<body>
+
+<div class="dash">
+
+  <aside class="dash__sidebar">
+    <div>
+      <a href="../index.html" class="brand" style="color:#fff; margin-bottom: var(--space-5); display:flex;">
+        <span class="brand__mark">SL</span>
+        SkillLink
+      </a>
+      <div class="dash__user">
+        <div class="dash__avatar">ND</div>
+        <div>
+          <div class="dash__user-name">Nova Digital</div>
+          <div class="dash__user-role">Entreprise</div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="dash__nav" style="display:flex;">
+      <a href="dashboard.html?role=entreprise"><span class="dash__nav-icon">■</span> Tableau de bord</a>
+      <a href="profil-entreprise.html" class="is-active"><span class="dash__nav-icon">◔</span> Profil entreprise</a>
+      <a href="publier-offre.html"><span class="dash__nav-icon">+</span> Publier une offre</a>
+      <a href="candidatures-recues.html"><span class="dash__nav-icon">▤</span> Candidatures</a>
+      <a href="messagerie.html"><span class="dash__nav-icon">✉</span> Messages</a>
+    </nav>
+  </aside>
+
+  <main class="dash__main">
+    <div class="dash__header">
+      <div>
+        <h1 class="dash__title">Profil entreprise</h1>
+        <p class="dash__subtitle">Ce profil est visible par les candidats sur tes offres.</p>
+      </div>
+    </div>
+
+    <div class="profile-head">
+      <div class="profile-head__avatar profile-head__avatar--square">ND</div>
+      <div class="profile-head__info">
+        <div class="profile-head__name">Nova Digital</div>
+        <div class="profile-head__meta">Fintech · 11–50 employés · Ouagadougou</div>
+      </div>
+      <div class="profile-completion">
+        <div class="profile-completion__label"><span>Profil vérifié</span><span>✓</span></div>
+        <div class="progress-bar"><div class="progress-bar__fill" style="width:100%; background: var(--color-success);"></div></div>
+      </div>
+    </div>
+
+    <form data-validate novalidate>
+
+      <div class="form-panel">
+        <h2 class="form-panel__title">Informations générales</h2>
+
+        <div class="field">
+          <label for="c-name">Nom de l'entreprise</label>
+          <input type="text" id="c-name" value="Nova Digital" required>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="c-sector">Secteur d'activité</label>
+            <input type="text" id="c-sector" value="Fintech">
+          </div>
+          <div class="field">
+            <label for="c-size">Taille</label>
+            <select id="c-size">
+              <option>1–10</option>
+              <option selected>11–50</option>
+              <option>51–200</option>
+              <option>200+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="c-city">Ville</label>
+            <input type="text" id="c-city" value="Ouagadougou">
+          </div>
+          <div class="field">
+            <label for="c-website">Site web</label>
+            <input type="url" id="c-website" placeholder="https://…">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="c-desc">Description de l'entreprise</label>
+          <textarea id="c-desc" rows="4" placeholder="Présente ton entreprise, ta mission, ta culture…">Nova Digital conçoit des solutions de paiement mobile pour les PME ouest-africaines. Nous recrutons régulièrement des stagiaires et jeunes diplômés en développement.</textarea>
+        </div>
+      </div>
+
+      <div class="form-panel">
+        <h2 class="form-panel__title">Logo de l'entreprise</h2>
+        <p class="form-panel__desc">Format carré recommandé (PNG ou JPG), 2 Mo maximum.</p>
+
+        <div class="upload-zone" data-upload-zone>
+          <div class="upload-zone__icon">⇧</div>
+          <p class="upload-zone__text">Clique ou glisse votre logo ici</p>
+          <p class="upload-zone__filename" data-upload-filename>Fichier actuel : logo_nova_digital.png</p>
+          <input type="file" accept=".png,.jpg,.jpeg" hidden>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn btn-ghost">Annuler</button>
+        <button type="submit" class="btn btn-accent">Enregistrer les modifications</button>
+      </div>
+    </form>
+  </main>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/profil.js"></script>
+</body>
+</html>

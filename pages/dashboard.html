@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tableau de bord — SkillLink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<div class="dash">
+
+  <aside class="dash__sidebar">
+    <div>
+      <a href="../index.html" class="brand" style="color:#fff; margin-bottom: var(--space-5); display:flex;">
+        <span class="brand__mark">SL</span>
+        SkillLink
+      </a>
+
+      <div class="dash__user">
+        <div class="dash__avatar">AK</div>
+        <div>
+          <div class="dash__user-name">Aïcha Konaté</div>
+          <div class="dash__user-role" data-dash-user-role>Étudiant</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nav Étudiant -->
+    <nav class="dash__nav" data-dash-view="etudiant">
+      <a href="dashboard.html?role=etudiant" class="is-active"><span class="dash__nav-icon">■</span> Tableau de bord</a>
+      <a href="profil-etudiant.html"><span class="dash__nav-icon">◔</span> Mon profil</a>
+      <a href="recherche-offres.html"><span class="dash__nav-icon">⌕</span> Offres</a>
+      <a href="recherche-formations.html"><span class="dash__nav-icon">▤</span> Formations</a>
+      <a href="messagerie.html"><span class="dash__nav-icon">✉</span> Messages</a>
+    </nav>
+
+    <!-- Nav Entreprise -->
+    <nav class="dash__nav" data-dash-view="entreprise">
+      <a href="dashboard.html?role=entreprise" class="is-active"><span class="dash__nav-icon">■</span> Tableau de bord</a>
+      <a href="profil-entreprise.html"><span class="dash__nav-icon">◔</span> Profil entreprise</a>
+      <a href="publier-offre.html"><span class="dash__nav-icon">+</span> Publier une offre</a>
+      <a href="candidatures-recues.html"><span class="dash__nav-icon">▤</span> Candidatures</a>
+      <a href="messagerie.html"><span class="dash__nav-icon">✉</span> Messages</a>
+    </nav>
+
+    <!-- Nav Formateur -->
+    <nav class="dash__nav" data-dash-view="formateur">
+      <a href="dashboard.html?role=formateur" class="is-active"><span class="dash__nav-icon">■</span> Tableau de bord</a>
+      <a href="profil-formateur.html"><span class="dash__nav-icon">◔</span> Mon profil</a>
+      <a href="publier-formation.html"><span class="dash__nav-icon">+</span> Publier une formation</a>
+      <a href="inscriptions-formations.html"><span class="dash__nav-icon">▤</span> Inscriptions</a>
+      <a href="messagerie.html"><span class="dash__nav-icon">✉</span> Messages</a>
+    </nav>
+
+    <div class="dash__sidebar-footer">
+      <p style="font-size: var(--fs-caption); opacity:0.6; margin-bottom: var(--space-2);">Démo prototype — changer de rôle</p>
+      <div class="role-demo-switch">
+        <a href="#" data-dash-role-link="etudiant">Étudiant</a>
+        <a href="#" data-dash-role-link="entreprise">Entreprise</a>
+        <a href="#" data-dash-role-link="formateur">Formateur</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="dash__main">
+
+    <!-- ============ VUE ÉTUDIANT ============ -->
+    <div data-dash-view="etudiant">
+      <div class="dash__header">
+        <div>
+          <h1 class="dash__title">Bonjour Aïcha 👋</h1>
+          <p class="dash__subtitle">Voici un résumé de ton activité sur SkillLink.</p>
+        </div>
+        <a href="recherche-offres.html" class="btn btn-accent">Chercher une offre</a>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-card__value">4</div><div class="stat-card__label">Candidatures envoyées</div></div>
+        <div class="stat-card"><div class="stat-card__value">1</div><div class="stat-card__label">Réponse positive</div></div>
+        <div class="stat-card"><div class="stat-card__value">2</div><div class="stat-card__label">Formations suivies</div></div>
+        <div class="stat-card"><div class="stat-card__value">70%</div><div class="stat-card__label">Profil complété</div></div>
+      </div>
+
+      <section class="dash__section">
+        <div class="dash__section-head">
+          <h2>Mes candidatures récentes</h2>
+          <a href="#">Tout voir</a>
+        </div>
+
+        <div class="list-row">
+          <div class="list-row__main">
+            <h3>Développeur Front-end Junior</h3>
+            <p class="list-row__meta">Chez Nova Digital · Stage · Envoyée il y a 2 jours</p>
+          </div>
+          <span class="status status--pending">En attente</span>
+        </div>
+
+        <div class="list-row">
+          <div class="list-row__main">
+            <h3>Assistant Chef de Projet</h3>
+            <p class="list-row__meta">Chez Atlas Consulting · CDI · Envoyée il y a 5 jours</p>
+          </div>
+          <span class="status status--accepted">Acceptée</span>
+        </div>
+
+        <div class="list-row">
+          <div class="list-row__main">
+            <h3>Stagiaire Marketing Digital</h3>
+            <p class="list-row__meta">Chez Zaka Média · Stage · Envoyée il y a 1 semaine</p>
+          </div>
+          <span class="status status--refused">Refusée</span>
+        </div>
+      </section>
+
+      <section class="dash__section">
+        <div class="dash__section-head">
+          <h2>Formations suggérées</h2>
+          <a href="recherche-formations.html">Tout voir</a>
+        </div>
+        <div class="list-row">
+          <div class="list-row__main">
+            <h3>Initiation à Ruby on Rails</h3>
+            <p class="list-row__meta">Par Formatech · 6 semaines · En ligne</p>
+          </div>
+          <a href="#" class="btn btn-ghost">Voir</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============ VUE ENTREPRISE ============ -->
+    <div data-dash-view="entreprise">
+      <div class="dash__header">
+        <div>
+          <h1 class="dash__title">Tableau de bord — Nova Digital</h1>
+          <p class="dash__subtitle">Suis tes offres et candidatures en un coup d'œil.</p>
+        </div>
+        <a href="publier-offre.html" class="btn btn-accent">+ Publier une offre</a>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-card__value">3</div><div class="stat-card__label">Offres actives</div></div>
+        <div class="stat-card"><div class="stat-card__value">27</div><div class="stat-card__label">Candidatures reçues</div></div>
+        <div class="stat-card"><div class="stat-card__value">5</div><div class="stat-card__label">En attente de réponse</div></div>
+        <div class="stat-card"><div class="stat-card__value">2</div><div class="stat-card__label">Entretiens planifiés</div></div>
+      </div>
+
+      <section class="dash__section">
+        <div class="dash__section-head">
+          <h2>Mes offres publiées</h2>
+          <a href="#">Tout voir</a>
+        </div>
+
+        <div class="list-row">
+          <div class="list-row__main">
+            <h3>Développeur Front-end Junior</h3>
+            <p class="list-row__meta">Stage · Publiée il y a 3 jours · 12 candidatures</p>
+          </div>
+          <a href="candidatures-recues.html" class="btn btn-ghost">Voir les candidats</a>
+        </div>
+
+        <div class="list-row">
+          <div class="list-row__main">
+            <h3>Chargé(e) de communication</h3>
+            <p class="list-row__meta">CDD · Publiée il y a 1 semaine · 9 candidatures</p>
+          </div>
+          <a href="candidatures-recues.html" class="btn btn-ghost">Voir les candidats</a>
+        </div>
+      </section>
+
+      <section class="dash__section">
+        <div class="dash__section-head">
+          <h2>Candidatures récentes</h2>
+          <a href="candidatures-recues.html">Tout voir</a>
+        </div>
+        <div class="list-row">
+          <div class="list-row__main">
+            <h3>Ibrahim Sawadogo</h3>
+            <p class="list-row__meta">A postulé pour Développeur Front-end Junior</p>
+          </div>
+          <span class="status status--pending">À examiner</span>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============ VUE FORMATEUR ============ -->
+    <div data-dash-view="formateur">
+      <div class="dash__header">
+        <div>
+          <h1 class="dash__title">Bonjour Formatech 👋</h1>
+          <p class="dash__subtitle">Gère tes formations et tes inscrits.</p>
+        </div>
+        <a href="publier-formation.html" class="btn btn-accent">+ Publier une formation</a>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-card__value">2</div><div class="stat-card__label">Formations actives</div></div>
+        <div class="stat-card"><div class="stat-card__value">34</div><div class="stat-card__label">Inscrits au total</div></div>
+        <div class="stat-card"><div class="stat-card__value">4.6</div><div class="stat-card__label">Note moyenne</div></div>
+      </div>
+
+      <section class="dash__section">
+        <div class="dash__section-head">
+          <h2>Mes formations</h2>
+          <a href="#">Tout voir</a>
+        </div>
+
+        <div class="list-row">
+          <div class="list-row__main">
+            <h3>Initiation à Ruby on Rails</h3>
+            <p class="list-row__meta">6 semaines · En ligne · 22 inscrits</p>
+          </div>
+          <a href="inscriptions-formations.html" class="btn btn-ghost">Voir les inscrits</a>
+        </div>
+
+        <div class="list-row">
+          <div class="list-row__main">
+            <h3>Bases du Design UI/UX</h3>
+            <p class="list-row__meta">4 semaines · En ligne · 12 inscrits</p>
+          </div>
+          <a href="inscriptions-formations.html" class="btn btn-ghost">Voir les inscrits</a>
+        </div>
+      </section>
+    </div>
+
+  </main>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/dashboard.js"></script>
+</body>
+</html>

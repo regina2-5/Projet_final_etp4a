@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postuler — SkillLink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/profil.css">
+<link rel="stylesheet" href="../css/candidature.css">
+</head>
+<body>
+
+<div class="dash">
+
+  <aside class="dash__sidebar">
+    <div>
+      <a href="../index.html" class="brand" style="color:#fff; margin-bottom: var(--space-5); display:flex;">
+        <span class="brand__mark">SL</span>
+        SkillLink
+      </a>
+      <div class="dash__user">
+        <div class="dash__avatar">AK</div>
+        <div>
+          <div class="dash__user-name">Aïcha Konaté</div>
+          <div class="dash__user-role">Étudiant</div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="dash__nav" style="display:flex;">
+      <a href="dashboard.html?role=etudiant"><span class="dash__nav-icon">■</span> Tableau de bord</a>
+      <a href="profil-etudiant.html"><span class="dash__nav-icon">◔</span> Mon profil</a>
+      <a href="recherche-offres.html" class="is-active"><span class="dash__nav-icon">⌕</span> Offres</a>
+      <a href="recherche-formations.html"><span class="dash__nav-icon">▤</span> Formations</a>
+      <a href="messagerie.html"><span class="dash__nav-icon">✉</span> Messages</a>
+    </nav>
+  </aside>
+
+  <main class="dash__main" style="max-width: 720px;">
+
+    <a href="recherche-offres.html" style="font-size: var(--fs-small); color: var(--color-ink-soft); display:inline-block; margin-bottom: var(--space-4);">← Retour aux offres</a>
+
+    <div class="offer-summary">
+      <div class="offer-summary__logo">ND</div>
+      <div>
+        <div class="offer-summary__title">Développeur Front-end Junior</div>
+        <div class="offer-summary__meta">Nova Digital · Stage · Ouagadougou</div>
+      </div>
+    </div>
+
+    <!-- Formulaire de candidature -->
+    <form data-validate novalidate id="candidature-form">
+      <div class="form-panel">
+        <h2 class="form-panel__title">Ton CV</h2>
+        <div class="cv-choice">
+          <label class="cv-choice__option">
+            <input type="radio" name="cv-choice" checked>
+            Utiliser mon CV actuel — <strong>CV_Aicha_Konate.pdf</strong>
+          </label>
+          <label class="cv-choice__option">
+            <input type="radio" name="cv-choice">
+            Téléverser un nouveau CV pour cette candidature
+          </label>
+        </div>
+
+        <div class="upload-zone" data-upload-zone style="display:none;" data-cv-upload>
+          <div class="upload-zone__icon">⇧</div>
+          <p class="upload-zone__text">Clique ou glisse ton CV ici</p>
+          <p class="upload-zone__filename" data-upload-filename></p>
+          <input type="file" accept=".pdf,.doc,.docx" hidden>
+        </div>
+      </div>
+
+      <div class="form-panel">
+        <h2 class="form-panel__title">Lettre de motivation</h2>
+        <p class="form-panel__desc">Quelques phrases suffisent — explique pourquoi ce poste t'intéresse.</p>
+        <div class="field">
+          <textarea rows="7" required placeholder="Je suis très intéressée par ce poste car…"></textarea>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <a href="recherche-offres.html" class="btn btn-ghost">Annuler</a>
+        <button type="submit" class="btn btn-accent">Envoyer ma candidature</button>
+      </div>
+    </form>
+
+    <!-- Message de confirmation (affiché après soumission simulée) -->
+    <div class="card success-panel" id="candidature-success" style="display:none;">
+      <div class="success-panel__icon">✓</div>
+      <h2 style="font-family: var(--font-display); font-size:1.3rem; margin-bottom: var(--space-2);">Candidature envoyée !</h2>
+      <p style="color: var(--color-ink-soft); margin-bottom: var(--space-4);">
+        Nova Digital a bien reçu ta candidature pour le poste de Développeur Front-end Junior.
+        Tu peux suivre son statut depuis ton tableau de bord.
+      </p>
+      <a href="dashboard.html?role=etudiant" class="btn btn-accent">Retour au tableau de bord</a>
+    </div>
+
+  </main>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/profil.js"></script>
+<script>
+  // Bascule "CV actuel" vs "nouveau CV"
+  document.querySelectorAll('input[name="cv-choice"]').forEach((radio, index) => {
+    radio.addEventListener("change", () => {
+      document.querySelector("[data-cv-upload]").style.display = index === 1 ? "block" : "none";
+    });
+  });
+
+  // Soumission simulée (prototype sans backend) : affiche l'écran de confirmation
+  document.getElementById("candidature-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    document.getElementById("candidature-form").style.display = "none";
+    document.querySelector(".offer-summary").style.display = "none";
+    document.getElementById("candidature-success").style.display = "block";
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Candidatures reçues — SkillLink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/offres.css">
+<link rel="stylesheet" href="../css/candidatures-recues.css">
+</head>
+<body>
+
+<div class="dash">
+
+  <aside class="dash__sidebar">
+    <div>
+      <a href="../index.html" class="brand" style="color:#fff; margin-bottom: var(--space-5); display:flex;">
+        <span class="brand__mark">SL</span>
+        SkillLink
+      </a>
+      <div class="dash__user">
+        <div class="dash__avatar">ND</div>
+        <div>
+          <div class="dash__user-name">Nova Digital</div>
+          <div class="dash__user-role">Entreprise</div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="dash__nav" style="display:flex;">
+      <a href="dashboard.html?role=entreprise"><span class="dash__nav-icon">■</span> Tableau de bord</a>
+      <a href="profil-entreprise.html"><span class="dash__nav-icon">◔</span> Profil entreprise</a>
+      <a href="publier-offre.html"><span class="dash__nav-icon">+</span> Publier une offre</a>
+      <a href="candidatures-recues.html" class="is-active"><span class="dash__nav-icon">▤</span> Candidatures</a>
+      <a href="messagerie.html"><span class="dash__nav-icon">✉</span> Messages</a>
+    </nav>
+  </aside>
+
+  <main class="dash__main">
+    <div class="dash__header">
+      <div>
+        <h1 class="dash__title">Candidatures reçues</h1>
+        <p class="dash__subtitle">Examine, accepte ou refuse les candidatures sur tes offres.</p>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <input type="search" class="filter-bar__search" data-offer-search placeholder="Rechercher un candidat…">
+      <select data-offer-domain>
+        <option value="">Toutes les offres</option>
+        <option value="frontend">Développeur Front-end Junior</option>
+        <option value="comm">Chargé(e) de communication</option>
+      </select>
+      <select data-offer-type>
+        <option value="">Tous les statuts</option>
+        <option value="pending">À examiner</option>
+        <option value="accepted">Acceptée</option>
+        <option value="refused">Refusée</option>
+      </select>
+      <p class="filter-bar__count" data-offer-count></p>
+    </div>
+
+    <div class="applicant-list">
+
+      <article class="applicant-row" data-offer-card
+        data-offer-search="ibrahim sawadogo développeur front-end junior"
+        data-offer-domain="frontend" data-offer-type="pending">
+        <div class="dash__avatar" style="background: var(--color-teal);">IS</div>
+        <div class="applicant-row__main">
+          <h3>Ibrahim Sawadogo</h3>
+          <p class="applicant-row__meta">Candidature pour <strong>Développeur Front-end Junior</strong> · reçue il y a 2 jours</p>
+          <div class="offer-card__skills" style="margin-top: var(--space-1);">
+            <span class="tag">JavaScript</span>
+            <span class="tag">React</span>
+            <span class="tag">Ruby on Rails</span>
+          </div>
+        </div>
+        <span class="status status--pending">À examiner</span>
+        <div class="applicant-row__actions">
+          <a href="#" class="btn btn-ghost">Voir le CV</a>
+          <button type="button" class="btn btn-ghost applicant-refuse">Refuser</button>
+          <button type="button" class="btn btn-accent applicant-accept">Accepter</button>
+        </div>
+      </article>
+
+      <article class="applicant-row" data-offer-card
+        data-offer-search="fatima traore développeur front-end junior"
+        data-offer-domain="frontend" data-offer-type="pending">
+        <div class="dash__avatar" style="background: var(--color-plum);">FT</div>
+        <div class="applicant-row__main">
+          <h3>Fatima Traoré</h3>
+          <p class="applicant-row__meta">Candidature pour <strong>Développeur Front-end Junior</strong> · reçue il y a 3 jours</p>
+          <div class="offer-card__skills" style="margin-top: var(--space-1);">
+            <span class="tag">HTML/CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </div>
+        <span class="status status--pending">À examiner</span>
+        <div class="applicant-row__actions">
+          <a href="#" class="btn btn-ghost">Voir le CV</a>
+          <button type="button" class="btn btn-ghost applicant-refuse">Refuser</button>
+          <button type="button" class="btn btn-accent applicant-accept">Accepter</button>
+        </div>
+      </article>
+
+      <article class="applicant-row" data-offer-card
+        data-offer-search="paul ouedraogo chargé communication"
+        data-offer-domain="comm" data-offer-type="accepted">
+        <div class="dash__avatar" style="background: var(--color-clay);">PO</div>
+        <div class="applicant-row__main">
+          <h3>Paul Ouédraogo</h3>
+          <p class="applicant-row__meta">Candidature pour <strong>Chargé(e) de communication</strong> · reçue il y a 1 semaine</p>
+          <div class="offer-card__skills" style="margin-top: var(--space-1);">
+            <span class="tag">Réseaux sociaux</span>
+            <span class="tag">Rédaction</span>
+          </div>
+        </div>
+        <span class="status status--accepted">Acceptée</span>
+        <div class="applicant-row__actions">
+          <a href="#" class="btn btn-ghost">Voir le CV</a>
+          <a href="messagerie.html" class="btn btn-accent">Contacter</a>
+        </div>
+      </article>
+
+      <article class="applicant-row" data-offer-card
+        data-offer-search="sara kabore chargé communication"
+        data-offer-domain="comm" data-offer-type="refused">
+        <div class="dash__avatar" style="background: var(--color-ink-soft);">SK</div>
+        <div class="applicant-row__main">
+          <h3>Sara Kaboré</h3>
+          <p class="applicant-row__meta">Candidature pour <strong>Chargé(e) de communication</strong> · reçue il y a 10 jours</p>
+          <div class="offer-card__skills" style="margin-top: var(--space-1);">
+            <span class="tag">Design graphique</span>
+          </div>
+        </div>
+        <span class="status status--refused">Refusée</span>
+        <div class="applicant-row__actions">
+          <a href="#" class="btn btn-ghost">Voir le CV</a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/offres.js"></script>
+<script>
+  // Actions accepter/refuser (simulation prototype, sans backend)
+  document.querySelectorAll(".applicant-accept").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const row = btn.closest(".applicant-row");
+      row.querySelector(".status").className = "status status--accepted";
+      row.querySelector(".status").textContent = "Acceptée";
+      btn.closest(".applicant-row__actions").innerHTML =
+        '<a href="#" class="btn btn-ghost">Voir le CV</a><a href="messagerie.html" class="btn btn-accent">Contacter</a>';
+    });
+  });
+  document.querySelectorAll(".applicant-refuse").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const row = btn.closest(".applicant-row");
+      row.querySelector(".status").className = "status status--refused";
+      row.querySelector(".status").textContent = "Refusée";
+      btn.closest(".applicant-row__actions").innerHTML =
+        '<a href="#" class="btn btn-ghost">Voir le CV</a>';
+    });
+  });
+</script>
+</body>
+</html>
